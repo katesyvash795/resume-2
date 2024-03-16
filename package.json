@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "lint:js": "eslint .",
     "dev": "node server.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js"
@@ -17,5 +18,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "validator": "^13.11.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0"
   }
 }
