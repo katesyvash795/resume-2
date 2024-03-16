@@ -5,7 +5,7 @@ export default function Title(){
 return(<div className={styles.container}>
 <div className={styles.textContainer}>
     
-    <h1 className={styles.title}>Hi! I'm a Full Stack developer!</h1>
+    <h1 className={styles.title}>Hi! {`I'm`} a Full Stack developer!</h1>
     <p className={styles.text}>My mission is to help you develop your website.</p>
 </div>
 <Image src={img} alt="my photo" width={564} height={641}/>  
