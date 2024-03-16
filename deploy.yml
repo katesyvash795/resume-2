@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Измените ветвь на вашу основную ветвь
+      - main  # Change this to your main branch
 
 jobs:
   deploy:
@@ -13,11 +13,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Build project
+        run: |
+          npm install  # Install dependencies
+          npm run build  # Build your project
+        
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
-          BRANCH: GH-Pages  # Ваша ветвь для развертывания, измените по необходимости
-          FOLDER: build      # Папка, которую вы хотите развернуть
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CLEAN: true        # Чистить ли предыдущие развертывания (true/false)
-
+          BRANCH: gh-pages
+          FOLDER: build
